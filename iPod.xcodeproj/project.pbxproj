@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B3D18C3239BF9750083E04A /* SpinnableRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C2239BF9750083E04A /* SpinnableRing.swift */; };
+		6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C4239BF9AA0083E04A /* Rotation.swift */; };
+		6B60A32C2397DCED006B9066 /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A32B2397DCED006B9066 /* SongCardView.swift */; };
+		6B60A32E2397DEAE006B9066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A32D2397DEAE006B9066 /* ContentView.swift */; };
+		6B60A33123991119006B9066 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A33023991118006B9066 /* Song.swift */; };
+		6B60A333239914FB006B9066 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A332239914FB006B9066 /* AlbumView.swift */; };
+		6B6A6106239E4AEB008ADA4A /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A6105239E4AEB008ADA4A /* Buildable.swift */; };
+		6B6A6108239EB17A008ADA4A /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A6107239EB17A008ADA4A /* Region.swift */; };
+		6B6A610A239EB35E008ADA4A /* CGPoint+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A6109239EB35E008ADA4A /* CGPoint+Region.swift */; };
 		6B8AEBFF2397C7E300017FFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEBFE2397C7E300017FFD /* AppDelegate.swift */; };
 		6B8AEC012397C7E300017FFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEC002397C7E300017FFD /* SceneDelegate.swift */; };
-		6B8AEC032397C7E300017FFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEC022397C7E300017FFD /* ContentView.swift */; };
+		6B8AEC032397C7E300017FFD /* ControlPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEC022397C7E300017FFD /* ControlPadView.swift */; };
 		6B8AEC052397C7E500017FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AEC042397C7E500017FFD /* Assets.xcassets */; };
 		6B8AEC082397C7E500017FFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AEC072397C7E500017FFD /* Preview Assets.xcassets */; };
 		6B8AEC0B2397C7E500017FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AEC092397C7E500017FFD /* LaunchScreen.storyboard */; };
+		6B8AEC142397D56B00017FFD /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEC132397D56B00017FFD /* Ring.swift */; };
+		6BB67588239958C100932576 /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB67587239958C100932576 /* Pager.swift */; };
+		6BCC70B0239D414D008CAD47 /* CGPoint+Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B3D18C2239BF9750083E04A /* SpinnableRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableRing.swift; sourceTree = "<group>"; };
+		6B3D18C4239BF9AA0083E04A /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		6B60A32B2397DCED006B9066 /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
+		6B60A32D2397DEAE006B9066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6B60A33023991118006B9066 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		6B60A332239914FB006B9066 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		6B6A6105239E4AEB008ADA4A /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
+		6B6A6107239EB17A008ADA4A /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		6B6A6109239EB35E008ADA4A /* CGPoint+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Region.swift"; sourceTree = "<group>"; };
 		6B8AEBFB2397C7E300017FFD /* iPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8AEBFE2397C7E300017FFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B8AEC002397C7E300017FFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6B8AEC022397C7E300017FFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6B8AEC022397C7E300017FFD /* ControlPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPadView.swift; sourceTree = "<group>"; };
 		6B8AEC042397C7E500017FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B8AEC072397C7E500017FFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B8AEC0A2397C7E500017FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B8AEC0C2397C7E500017FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B8AEC132397D56B00017FFD /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		6BB67587239958C100932576 /* Pager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pager.swift; sourceTree = "<group>"; };
+		6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Angle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B60A32F23991101006B9066 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B60A33023991118006B9066 /* Song.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6B8AEBF22397C7E300017FFD = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +90,8 @@
 			children = (
 				6B8AEBFE2397C7E300017FFD /* AppDelegate.swift */,
 				6B8AEC002397C7E300017FFD /* SceneDelegate.swift */,
-				6B8AEC022397C7E300017FFD /* ContentView.swift */,
+				6B60A32F23991101006B9066 /* Model */,
+				6B8AEC122397D53D00017FFD /* Views */,
 				6B8AEC042397C7E500017FFD /* Assets.xcassets */,
 				6B8AEC092397C7E500017FFD /* LaunchScreen.storyboard */,
 				6B8AEC0C2397C7E500017FFD /* Info.plist */,
@@ -73,6 +106,49 @@
 				6B8AEC072397C7E500017FFD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6B8AEC122397D53D00017FFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BB67586239958B100932576 /* Helper */,
+				6BB67585239958A400932576 /* Display */,
+				6BB675842399589500932576 /* ControlPad */,
+				6B60A32D2397DEAE006B9066 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6BB675842399589500932576 /* ControlPad */ = {
+			isa = PBXGroup;
+			children = (
+				6B8AEC022397C7E300017FFD /* ControlPadView.swift */,
+				6B8AEC132397D56B00017FFD /* Ring.swift */,
+				6B3D18C2239BF9750083E04A /* SpinnableRing.swift */,
+			);
+			path = ControlPad;
+			sourceTree = "<group>";
+		};
+		6BB67585239958A400932576 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				6B60A32B2397DCED006B9066 /* SongCardView.swift */,
+				6B60A332239914FB006B9066 /* AlbumView.swift */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
+		6BB67586239958B100932576 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6BB67587239958C100932576 /* Pager.swift */,
+				6B3D18C4239BF9AA0083E04A /* Rotation.swift */,
+				6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */,
+				6B6A6109239EB35E008ADA4A /* CGPoint+Region.swift */,
+				6B6A6105239E4AEB008ADA4A /* Buildable.swift */,
+				6B6A6107239EB17A008ADA4A /* Region.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +222,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB67588239958C100932576 /* Pager.swift in Sources */,
+				6B60A33123991119006B9066 /* Song.swift in Sources */,
 				6B8AEBFF2397C7E300017FFD /* AppDelegate.swift in Sources */,
+				6B8AEC142397D56B00017FFD /* Ring.swift in Sources */,
+				6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */,
+				6B3D18C3239BF9750083E04A /* SpinnableRing.swift in Sources */,
+				6B60A32E2397DEAE006B9066 /* ContentView.swift in Sources */,
 				6B8AEC012397C7E300017FFD /* SceneDelegate.swift in Sources */,
-				6B8AEC032397C7E300017FFD /* ContentView.swift in Sources */,
+				6B6A610A239EB35E008ADA4A /* CGPoint+Region.swift in Sources */,
+				6BCC70B0239D414D008CAD47 /* CGPoint+Angle.swift in Sources */,
+				6B60A32C2397DCED006B9066 /* SongCardView.swift in Sources */,
+				6B60A333239914FB006B9066 /* AlbumView.swift in Sources */,
+				6B6A6108239EB17A008ADA4A /* Region.swift in Sources */,
+				6B8AEC032397C7E300017FFD /* ControlPadView.swift in Sources */,
+				6B6A6106239E4AEB008ADA4A /* Buildable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
