@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17C079FA23A058E200719A4A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C079F923A058E200719A4A /* AudioPlayer.swift */; };
+		17C079FC23A05C6000719A4A /* sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17C079FB23A05C6000719A4A /* sample.wav */; };
 		6B3D18C3239BF9750083E04A /* SpinnableRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C2239BF9750083E04A /* SpinnableRing.swift */; };
 		6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C4239BF9AA0083E04A /* Rotation.swift */; };
 		6B60A32C2397DCED006B9066 /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A32B2397DCED006B9066 /* SongCardView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17C079F923A058E200719A4A /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		17C079FB23A05C6000719A4A /* sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample.wav; sourceTree = "<group>"; };
 		6B3D18C2239BF9750083E04A /* SpinnableRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableRing.swift; sourceTree = "<group>"; };
 		6B3D18C4239BF9AA0083E04A /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		6B60A32B2397DCED006B9066 /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
@@ -61,10 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17C079F823A058B400719A4A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				17C079FB23A05C6000719A4A /* sample.wav */,
+				17C079F923A058E200719A4A /* AudioPlayer.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		6B60A32F23991101006B9066 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				6B60A33023991118006B9066 /* Song.swift */,
+				6B3D18C4239BF9AA0083E04A /* Rotation.swift */,
+				6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */,
+				6B6A6109239EB35E008ADA4A /* CGPoint+Region.swift */,
+				6B6A6105239E4AEB008ADA4A /* Buildable.swift */,
+				6B6A6107239EB17A008ADA4A /* Region.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,10 +106,11 @@
 		6B8AEBFD2397C7E300017FFD /* iPod */ = {
 			isa = PBXGroup;
 			children = (
+				17C079F823A058B400719A4A /* UseCase */,
 				6B8AEBFE2397C7E300017FFD /* AppDelegate.swift */,
 				6B8AEC002397C7E300017FFD /* SceneDelegate.swift */,
 				6B60A32F23991101006B9066 /* Model */,
-				6B8AEC122397D53D00017FFD /* Views */,
+				6B8AEC122397D53D00017FFD /* View */,
 				6B8AEC042397C7E500017FFD /* Assets.xcassets */,
 				6B8AEC092397C7E500017FFD /* LaunchScreen.storyboard */,
 				6B8AEC0C2397C7E500017FFD /* Info.plist */,
@@ -108,7 +127,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6B8AEC122397D53D00017FFD /* Views */ = {
+		6B8AEC122397D53D00017FFD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6BB67586239958B100932576 /* Helper */,
@@ -116,7 +135,7 @@
 				6BB675842399589500932576 /* ControlPad */,
 				6B60A32D2397DEAE006B9066 /* ContentView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		6BB675842399589500932576 /* ControlPad */ = {
@@ -142,11 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				6BB67587239958C100932576 /* Pager.swift */,
-				6B3D18C4239BF9AA0083E04A /* Rotation.swift */,
-				6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */,
-				6B6A6109239EB35E008ADA4A /* CGPoint+Region.swift */,
-				6B6A6105239E4AEB008ADA4A /* Buildable.swift */,
-				6B6A6107239EB17A008ADA4A /* Region.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -209,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C079FC23A05C6000719A4A /* sample.wav in Resources */,
 				6B8AEC0B2397C7E500017FFD /* LaunchScreen.storyboard in Resources */,
 				6B8AEC082397C7E500017FFD /* Preview Assets.xcassets in Resources */,
 				6B8AEC052397C7E500017FFD /* Assets.xcassets in Resources */,
@@ -233,6 +248,7 @@
 				6B6A610A239EB35E008ADA4A /* CGPoint+Region.swift in Sources */,
 				6BCC70B0239D414D008CAD47 /* CGPoint+Angle.swift in Sources */,
 				6B60A32C2397DCED006B9066 /* SongCardView.swift in Sources */,
+				17C079FA23A058E200719A4A /* AudioPlayer.swift in Sources */,
 				6B60A333239914FB006B9066 /* AlbumView.swift in Sources */,
 				6B6A6108239EB17A008ADA4A /* Region.swift in Sources */,
 				6B8AEC032397C7E300017FFD /* ControlPadView.swift in Sources */,
@@ -374,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod/Preview Content\"";
-				DEVELOPMENT_TEAM = FMMUM2Q3NC;
+				DEVELOPMENT_TEAM = LPBB5C5CRP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod/Preview Content\"";
-				DEVELOPMENT_TEAM = FMMUM2Q3NC;
+				DEVELOPMENT_TEAM = LPBB5C5CRP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

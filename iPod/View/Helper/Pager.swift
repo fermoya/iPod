@@ -92,7 +92,6 @@ struct Pager<Data, Content>: View  where Content: View, Data: Identifiable & Equ
         }
         .padding(.vertical, verticalInsets)
         .background(backgroundColor)
-        .cornerRadius(5)
     }
 }
 
@@ -158,7 +157,9 @@ extension Pager {
 
         let increment = totalIncrement - totalIncrement.rounded(.towardZero)
         let nextPage = direction == .forward ? currentPage.rounded(.awayFromZero) : currentPage.rounded(.towardZero)
-        guard nextPage > 0 else { return focusedItemScale - (scaleTotalIncrement * increment) }
+        guard currentPage > 0 else {
+            return focusedItemScale - (scaleTotalIncrement * increment)
+        }
 
         return index == nextPage ? unfocusedItemScale + (scaleTotalIncrement * increment)
             : focusedItemScale - (scaleTotalIncrement * increment)

@@ -54,8 +54,8 @@ extension SongCardView {
 
 }
 
-//struct SongCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SongCardView()
-//    }
-//}
+struct SongCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        SongCardView(song: songs[1], size: CGSize(width: 300, height: 300))
+    }
+}

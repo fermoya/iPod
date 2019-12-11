@@ -34,7 +34,8 @@ struct ControlPadView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Ring(fillColor: self.color, ratio: self.ringRatio)
+                Ring(fillColor: self.color,
+                     ratio: self.ringRatio)
                 SpinnableRing(fillColor: Color.gray,
                               ratio: self.ringRatio)
                     .onChanged ({ (rotation) in
@@ -111,7 +112,8 @@ extension ControlPadView {
     var playPauseButton: some View {
         Button(action: {
             withAnimation(self.animation) {
-                self.isPaused ? self.onPauseTapped?() : self.onPlayTapped?()
+                self.isPaused ? self.onPlayTapped?() : self.onPauseTapped?()
+                self.isPaused.toggle()
             }
         }) {
            Image(systemName: "forward.end.fill")
