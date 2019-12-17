@@ -11,8 +11,9 @@ import UIKit
 
 struct SongCardView: View {
 
+    // TODO: style
     private var color: Color { .black }
-    private var highlightColor: Color { .white }
+    @EnvironmentObject var styleManager: StyleManager
 
     var song: Song
     var size: CGSize
@@ -27,7 +28,7 @@ struct SongCardView: View {
             }.background(self.color)
                 .clipped()
                 .cornerRadius(5)
-                .shadow(color: self.highlightColor, radius: 3)
+                .shadow(color: self.styleManager.colorScheme.highlightColor, radius: 3)
         }
     }
     
@@ -47,7 +48,7 @@ extension SongCardView {
 
     var songTitle: some View {
         Text("\(song.title)-\(song.bandName)")
-            .foregroundColor(highlightColor)
+            .foregroundColor(styleManager.colorScheme.highlightColor)
             .multilineTextAlignment(.center)
             .padding()
     }

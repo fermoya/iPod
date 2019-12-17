@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Ring: View {
 
+    var strokeColor: Color
     var fillColor: Color
     var ratio: CGFloat
 

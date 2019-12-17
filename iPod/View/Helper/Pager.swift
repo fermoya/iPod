@@ -26,7 +26,11 @@ struct Pager<Data, Content>: View  where Content: View, Data: Identifiable & Equ
 
     @State private var draggingOffset: CGFloat = 0
     @State private var draggingStartTime: Date! = nil
-    @Binding private var page: Int
+    @Binding private var page: Int {
+        didSet {
+            onPageChanged?(page)
+        }
+    }
 
     private var contentOffset: CGFloat = 0
 
@@ -37,6 +41,7 @@ struct Pager<Data, Content>: View  where Content: View, Data: Identifiable & Equ
 
     private var backgroundColor: Color = .clear
     private var shadowColor: Color = .clear
+    private var onPageChanged: ((Int) -> Void)?
 
     private var direction: Direction? {
         guard totalOffset != 0 else { return nil }
@@ -138,6 +143,10 @@ extension Pager: Buildable {
 
     func itemShadowColor(_ color: Color) -> Self {
         mutate(keyPath: \.shadowColor, value: color)
+    }
+
+    func onPageChanged(_ onPageChanged: ((Int) -> Void)?) -> Self {
+        mutate(keyPath: \.onPageChanged, value: onPageChanged)
     }
 
 }

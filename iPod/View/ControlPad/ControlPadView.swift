@@ -20,23 +20,13 @@ struct ControlPadView: View {
     private var onSpinningEnded: ((Rotation) -> Void)?
 
     @State private var isPaused = false
-
-    var color: Color
-
-    init(color: Color) {
-        self.color = color
-    }
-
-    private var buttonRelativePosition: CGFloat {
-        (1 - self.ringRatio)
-    }
+    @EnvironmentObject var styleManager: StyleManager
 
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Ring(fillColor: self.color,
-                     ratio: self.ringRatio)
-                SpinnableRing(fillColor: Color.gray,
+                SpinnableRing(strokeColor: self.styleManager.colorScheme.secondaryColor,
+                              fillColor: self.styleManager.colorScheme.secondaryColor,
                               ratio: self.ringRatio)
                     .onChanged ({ (rotation) in
                         withAnimation(self.animation) {
@@ -46,7 +36,7 @@ struct ControlPadView: View {
                         withAnimation(self.animation) {
                             self.onSpinningEnded?(rotation)
                         }
-                    }).blendMode(.multiply)
+                    })
                 self.menuButton
                     .offset(x: 0,
                             y: -self.buttonTranslation(for: geometry.size))
@@ -59,7 +49,8 @@ struct ControlPadView: View {
                 self.playPauseButton
                     .offset(x: 0,
                             y: self.buttonTranslation(for: geometry.size))
-            }
+            }.shadow(color: self.styleManager.colorScheme.secondaryColor,
+                     radius: 3)
         }
     }
 }
@@ -76,7 +67,7 @@ extension ControlPadView {
         }) {
             Text("MENU")
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+                .foregroundColor(styleManager.colorScheme.highlightColor)
                 .padding()
         }
     }
@@ -88,7 +79,7 @@ extension ControlPadView {
             }
         }) {
            Image(systemName: "forward.end.alt.fill")
-            .foregroundColor(.white)
+            .foregroundColor(styleManager.colorScheme.highlightColor)
             .padding().onTapGesture {
                 withAnimation(self.animation) {
                     self.onForwardTapped?()
@@ -104,7 +95,7 @@ extension ControlPadView {
             }
         }) {
            Image(systemName: "backward.end.alt.fill")
-            .foregroundColor(.white)
+            .foregroundColor(styleManager.colorScheme.highlightColor)
             .padding()
         }
     }
@@ -117,7 +108,7 @@ extension ControlPadView {
             }
         }) {
            Image(systemName: "forward.end.fill")
-            .foregroundColor(.white)
+            .foregroundColor(styleManager.colorScheme.highlightColor)
             .padding()
         }
     }
@@ -163,6 +154,10 @@ extension ControlPadView {
 
     private var animation: Animation {
         Animation.easeOut
+    }
+
+    private var buttonRelativePosition: CGFloat {
+        (1 - self.ringRatio)
     }
 
     private func buttonTranslation(for availableSpace: CGSize) -> CGFloat {

@@ -11,12 +11,12 @@ import SwiftUI
 struct AlbumView: View {
 
     private var blurRatio: CGFloat = 0.1
-    private var backgroundColor: Color = .clear
-    private var shadowColor: Color = .white
     private var cardAspectRatio: CGFloat = 9 / 16
+    private var onPageChanged: ((Int) -> Void)?
 
     @Binding var trackIndex: Int
     @Binding var pageOffset: Double
+    @EnvironmentObject var styleManager: StyleManager
 
     var tracks: [Song]
 
@@ -32,8 +32,9 @@ struct AlbumView: View {
                 Pager(page: self.$trackIndex, pageSize: self.pageSize(geometry), data: self.tracks) {
                     SongCardView(song: $0, size: self.pageSize(geometry))
                 }.pageOffset(self.pageOffset)
-                    .itemShadowColor(self.shadowColor)
-                    .background(self.backgroundColor)
+                    .itemShadowColor(self.styleManager.colorScheme.shadowColor)
+                    .onPageChanged(self.onPageChanged)
+                    .background(self.styleManager.colorScheme.highlightColor)
                     .frame(width: min(geometry.size.width, geometry.size.height),
                            height: min(geometry.size.width, geometry.size.height))
                     .clipped()
@@ -58,8 +59,8 @@ extension AlbumView {
     
     private var gradient: Gradient {
         Gradient(stops: [
-            .init(color: backgroundColor.opacity(0.5), location: 0),
-            .init(color: backgroundColor.opacity(0), location: 1)])
+            .init(color: styleManager.colorScheme.highlightColor.opacity(0.5), location: 0),
+            .init(color: styleManager.colorScheme.highlightColor.opacity(0), location: 1)])
     }
     
     private var blurredView: some View {
@@ -78,12 +79,8 @@ extension AlbumView: Buildable {
                height: min(geometry.size.width, geometry.size.height))
     }
 
-    func background(_ background: Color, alignment: Alignment = .center) -> Self {
-        mutate(keyPath: \.backgroundColor, value: background)
-    }
-
-    func cardShadowColor(_ color: Color) -> Self {
-        mutate(keyPath: \.shadowColor, value: color)
+    func onPageChanged(_ onPageChanged: ((Int) -> Void)?) -> Self {
+        mutate(keyPath: \.onPageChanged, value: onPageChanged)
     }
 
 }

@@ -13,7 +13,6 @@ struct ContentView: View {
 
     @State private var trackIndex = 0 {
         didSet {
-            print("old: \(oldValue), new: \(trackIndex)")
             trackSubject.send(trackIndex)
         }
     }
@@ -21,24 +20,24 @@ struct ContentView: View {
     @State private var trackSubject = CurrentValueSubject<Int, Never>(0)
     @State var cancelable: AnyCancellable!
 
+    @EnvironmentObject var styleManager: StyleManager
+
     var audioPlayer = AudioPlayer(songs: songs)
-    var backgroundColor: Color = .red
-    var displayColor: Color = .white
-    var shadowColor: Color = .gray
 
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(backgroundColor)
+                .fill(styleManager.colorScheme.primaryColor)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 AlbumView(trackIndex: $trackIndex,
                           pageOffset: $pageOffset,
                           tracks: songs)
-                    .background(displayColor)
-                    .cardShadowColor(shadowColor)
+                    .onPageChanged({
+                        self.trackSubject.send($0)
+                    })
                 
-                ControlPadView(color: backgroundColor)
+                ControlPadView()
                     .onForwardTapped ({
                         guard self.trackIndex < (songs.count - 1) else { return }
                         self.trackIndex += 1
@@ -59,7 +58,7 @@ struct ContentView: View {
                         self.audioPlayer.pause()
                     })
                     .padding()
-            }.background(backgroundColor)
+            }.background(self.styleManager.colorScheme.primaryColor)
         }.onAppear {
             self.cancelable = self.trackSubject.assign(to: \AudioPlayer.trackIndex, on: self.audioPlayer)
         }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SpinnableRing: View {
 
+    var strokeColor: Color
     var fillColor: Color
     var ratio: CGFloat
 
@@ -19,14 +20,16 @@ struct SpinnableRing: View {
     @State private var rotation: Rotation = .none
     @State private var finishedSpinning = false
 
-    init(fillColor: Color, ratio: CGFloat) {
+    init(strokeColor: Color, fillColor: Color, ratio: CGFloat) {
+        self.strokeColor = strokeColor
         self.fillColor = fillColor
         self.ratio = ratio
     }
 
     var body: some View {
         GeometryReader { geometry in
-            Ring(fillColor: self.fillColor,
+            Ring(strokeColor: self.strokeColor,
+                 fillColor: self.fillColor,
                  ratio: self.ratio)
                 .gesture(
                     DragGesture()

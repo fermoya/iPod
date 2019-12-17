@@ -21,15 +21,11 @@ class AudioPlayer {
     
     var trackIndex = 0 {
         didSet {
+            print("old: \(oldValue), new: \(trackIndex)")
             audioPlayer = getAudioPlayer()
             audioPlayer.play()
         }
     }
-    
-    lazy var trackIndexSubscriber: Subscribers.Sink<Int, Never> = {
-        Subscribers.Sink<Int, Never>.init(receiveCompletion: { _ in },
-                                          receiveValue: { self.trackIndex = $0 })
-    }()
     
     var songs: [Song]
     

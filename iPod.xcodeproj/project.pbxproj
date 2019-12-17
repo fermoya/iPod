@@ -26,6 +26,7 @@
 		6B8AEC0B2397C7E500017FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AEC092397C7E500017FFD /* LaunchScreen.storyboard */; };
 		6B8AEC142397D56B00017FFD /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AEC132397D56B00017FFD /* Ring.swift */; };
 		6BB67588239958C100932576 /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB67587239958C100932576 /* Pager.swift */; };
+		6BC8F80023A2B9EA009C020D /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC8F7FF23A2B9EA009C020D /* StyleManager.swift */; };
 		6BCC70B0239D414D008CAD47 /* CGPoint+Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		6B8AEC0C2397C7E500017FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8AEC132397D56B00017FFD /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		6BB67587239958C100932576 /* Pager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pager.swift; sourceTree = "<group>"; };
+		6BC8F7FF23A2B9EA009C020D /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		6BCC70AF239D414D008CAD47 /* CGPoint+Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Angle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 		6B8AEBFD2397C7E300017FFD /* iPod */ = {
 			isa = PBXGroup;
 			children = (
+				6BC8F7FE23A2B9D7009C020D /* StyleManager */,
 				17C079F823A058B400719A4A /* UseCase */,
 				6B8AEBFE2397C7E300017FFD /* AppDelegate.swift */,
 				6B8AEC002397C7E300017FFD /* SceneDelegate.swift */,
@@ -163,6 +166,14 @@
 				6BB67587239958C100932576 /* Pager.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		6BC8F7FE23A2B9D7009C020D /* StyleManager */ = {
+			isa = PBXGroup;
+			children = (
+				6BC8F7FF23A2B9EA009C020D /* StyleManager.swift */,
+			);
+			path = StyleManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				6BB67588239958C100932576 /* Pager.swift in Sources */,
 				6B60A33123991119006B9066 /* Song.swift in Sources */,
+				6BC8F80023A2B9EA009C020D /* StyleManager.swift in Sources */,
 				6B8AEBFF2397C7E300017FFD /* AppDelegate.swift in Sources */,
 				6B8AEC142397D56B00017FFD /* Ring.swift in Sources */,
 				6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */,
@@ -390,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod/Preview Content\"";
-				DEVELOPMENT_TEAM = LPBB5C5CRP;
+				DEVELOPMENT_TEAM = FMMUM2Q3NC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod/Preview Content\"";
-				DEVELOPMENT_TEAM = LPBB5C5CRP;
+				DEVELOPMENT_TEAM = FMMUM2Q3NC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
