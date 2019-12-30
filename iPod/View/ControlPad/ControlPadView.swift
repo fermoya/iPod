@@ -25,14 +25,14 @@ struct ControlPadView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                SpinnableRing(strokeColor: self.styleManager.colorScheme.secondaryColor,
-                              fillColor: self.styleManager.colorScheme.secondaryColor,
-                              ratio: self.ringRatio)
-                    .onChanged ({ (rotation) in
+                Ring(strokeColor: self.styleManager.colorScheme.secondaryColor,
+                     fillColor: self.styleManager.colorScheme.secondaryColor,
+                     ratio: self.ringRatio)
+                    .spinnable(onChanged: { (rotation) in
                         withAnimation(self.animation) {
                             self.onSpinningChanged?(rotation)
                         }
-                    }).onEnded({ rotation in
+                    }, onEnded: { rotation in
                         withAnimation(self.animation) {
                             self.onSpinningEnded?(rotation)
                         }

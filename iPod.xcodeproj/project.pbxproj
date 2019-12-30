@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		17C079FA23A058E200719A4A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C079F923A058E200719A4A /* AudioPlayer.swift */; };
 		17C079FC23A05C6000719A4A /* sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17C079FB23A05C6000719A4A /* sample.wav */; };
-		6B3D18C3239BF9750083E04A /* SpinnableRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C2239BF9750083E04A /* SpinnableRing.swift */; };
+		6B3D18C3239BF9750083E04A /* SpinnableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C2239BF9750083E04A /* SpinnableViewModifier.swift */; };
 		6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D18C4239BF9AA0083E04A /* Rotation.swift */; };
 		6B60A32C2397DCED006B9066 /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A32B2397DCED006B9066 /* SongCardView.swift */; };
 		6B60A32E2397DEAE006B9066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60A32D2397DEAE006B9066 /* ContentView.swift */; };
@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		17C079F923A058E200719A4A /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		17C079FB23A05C6000719A4A /* sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample.wav; sourceTree = "<group>"; };
-		6B3D18C2239BF9750083E04A /* SpinnableRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableRing.swift; sourceTree = "<group>"; };
+		6B3D18C2239BF9750083E04A /* SpinnableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableViewModifier.swift; sourceTree = "<group>"; };
 		6B3D18C4239BF9AA0083E04A /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		6B60A32B2397DCED006B9066 /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
 		6B60A32D2397DEAE006B9066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 			children = (
 				6B8AEC022397C7E300017FFD /* ControlPadView.swift */,
 				6B8AEC132397D56B00017FFD /* Ring.swift */,
-				6B3D18C2239BF9750083E04A /* SpinnableRing.swift */,
 			);
 			path = ControlPad;
 			sourceTree = "<group>";
@@ -163,6 +162,7 @@
 		6BB67586239958B100932576 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6B3D18C2239BF9750083E04A /* SpinnableViewModifier.swift */,
 				6BB67587239958C100932576 /* Pager.swift */,
 			);
 			path = Helper;
@@ -254,7 +254,7 @@
 				6B8AEBFF2397C7E300017FFD /* AppDelegate.swift in Sources */,
 				6B8AEC142397D56B00017FFD /* Ring.swift in Sources */,
 				6B3D18C5239BF9AA0083E04A /* Rotation.swift in Sources */,
-				6B3D18C3239BF9750083E04A /* SpinnableRing.swift in Sources */,
+				6B3D18C3239BF9750083E04A /* SpinnableViewModifier.swift in Sources */,
 				6B60A32E2397DEAE006B9066 /* ContentView.swift in Sources */,
 				6B8AEC012397C7E300017FFD /* SceneDelegate.swift in Sources */,
 				6B6A610A239EB35E008ADA4A /* CGPoint+Region.swift in Sources */,
