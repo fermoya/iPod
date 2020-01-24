@@ -16,7 +16,6 @@ struct SongCardView: View {
     @EnvironmentObject var styleManager: StyleManager
 
     var song: Song
-    var size: CGSize
 
     var body: some View {
         GeometryReader { geometry in
@@ -28,7 +27,6 @@ struct SongCardView: View {
             }.background(self.color)
                 .clipped()
                 .cornerRadius(5)
-                .shadow(color: self.styleManager.colorScheme.highlightColor, radius: 3)
         }
     }
     
@@ -57,6 +55,6 @@ extension SongCardView {
 
 struct SongCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SongCardView(song: songs[1], size: CGSize(width: 300, height: 300))
+        SongCardView(song: songs[1])
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIPager
 
 struct AlbumView: View {
 
@@ -29,14 +30,18 @@ struct AlbumView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Pager(page: self.$trackIndex, pageSize: self.pageSize(geometry), data: self.tracks) {
-                    SongCardView(song: $0, size: self.pageSize(geometry))
-                }.pageOffset(self.pageOffset)
-                    .itemShadowColor(self.styleManager.colorScheme.shadowColor)
+                Pager(page: self.$trackIndex,
+                      data: self.tracks, content: {
+                        SongCardView(song: $0)
+                            .shadow(color: self.styleManager.colorScheme.shadowColor, radius: 5)
+                })
+                    .interactive(0.8)
+                    .itemSpacing(10)
+                    .pageOffset(self.pageOffset)
+                    .itemAspectRatio(self.cardAspectRatio)
                     .onPageChanged(self.onPageChanged)
+                    .padding()
                     .background(self.styleManager.colorScheme.highlightColor)
-                    .frame(width: min(geometry.size.width, geometry.size.height),
-                           height: min(geometry.size.width, geometry.size.height))
                     .clipped()
                 self.blurredView
                     .frame(width: geometry.size.width * self.blurRatio,
@@ -74,13 +79,8 @@ extension AlbumView {
 
 extension AlbumView: Buildable {
 
-    func pageSize(_ geometry: GeometryProxy) -> CGSize {
-        CGSize(width: min(geometry.size.width, geometry.size.height) * self.cardAspectRatio,
-               height: min(geometry.size.width, geometry.size.height))
-    }
-
     func onPageChanged(_ onPageChanged: ((Int) -> Void)?) -> Self {
-        mutate(keyPath: \.onPageChanged, value: onPageChanged)
+        mutating(keyPath: \.onPageChanged, value: onPageChanged)
     }
 
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ControlPad.swift
 //  iPod
 //
 //  Created by Fernando Moya de Rivas on 04/12/2019.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ControlPadView: View {
+struct ControlPad: View {
 
     private var ringRatio: CGFloat = 1 / 3
     private var onForwardTapped: (() -> Void)?
@@ -25,9 +25,8 @@ struct ControlPadView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Ring(strokeColor: self.styleManager.colorScheme.secondaryColor,
-                     fillColor: self.styleManager.colorScheme.secondaryColor,
-                     ratio: self.ringRatio)
+                Ring(ratio: self.ringRatio)
+                    .fill(self.styleManager.colorScheme.secondaryColor)
                     .spinnable(onChanged: { (rotation) in
                         withAnimation(self.animation) {
                             self.onSpinningChanged?(rotation)
@@ -57,7 +56,7 @@ struct ControlPadView: View {
 
 // MARK: Subviews
 
-extension ControlPadView {
+extension ControlPad {
 
     var menuButton: some View {
         Button(action: {
@@ -117,40 +116,40 @@ extension ControlPadView {
 
 // MARK: Builder
 
-extension ControlPadView: Buildable {
+extension ControlPad: Buildable {
 
     func onSpinningEnded(_ onSpinningEnded: @escaping (Rotation) -> Void) -> Self {
-        self.mutate(keyPath: \.onSpinningEnded, value: onSpinningEnded)
+        mutating(keyPath: \.onSpinningEnded, value: onSpinningEnded)
     }
 
     func onSpinningChanged(_ onSpinningChanged: @escaping (Rotation) -> Void) -> Self {
-        self.mutate(keyPath: \.onSpinningChanged, value: onSpinningChanged)
+        mutating(keyPath: \.onSpinningChanged, value: onSpinningChanged)
     }
 
     func onForwardTapped(_ onForwardTapped: @escaping () -> Void) -> Self {
-        self.mutate(keyPath: \.onForwardTapped, value: onForwardTapped)
+        mutating(keyPath: \.onForwardTapped, value: onForwardTapped)
     }
 
     func onBackwardTapped(_ onBackwardTapped: @escaping () -> Void) -> Self {
-        self.mutate(keyPath: \.onBackwardTapped, value: onBackwardTapped)
+        mutating(keyPath: \.onBackwardTapped, value: onBackwardTapped)
     }
 
     func onMenuTapped(_ onMenuTapped: @escaping () -> Void) -> Self {
-        self.mutate(keyPath: \.onMenuTapped, value: onMenuTapped)
+        mutating(keyPath: \.onMenuTapped, value: onMenuTapped)
     }
 
     func onPauseTapped(_ onPauseTapped: @escaping () -> Void) -> Self {
-        self.mutate(keyPath: \.onPauseTapped, value: onPauseTapped)
+        mutating(keyPath: \.onPauseTapped, value: onPauseTapped)
     }
 
     func onPlayTapped(_ onPlayTapped: @escaping () -> Void) -> Self {
-        self.mutate(keyPath: \.onPlayTapped, value: onPlayTapped)
+        mutating(keyPath: \.onPlayTapped, value: onPlayTapped)
     }
 
 }
 
 // MARK: Helper functions
-extension ControlPadView {
+extension ControlPad {
 
     private var animation: Animation {
         Animation.easeOut

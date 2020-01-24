@@ -8,48 +8,33 @@
 
 import SwiftUI
 
-struct Ring: View {
-
-    var strokeColor: Color
-    var fillColor: Color
+struct Ring: Shape {
+    
     var ratio: CGFloat
 
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                self.ring(center: CGPoint(x: geometry.size.width / 2,
-                                          y: geometry.size.height / 2),
-                          radius: min(geometry.size.width, geometry.size.height) / 2,
-                          ratio: self.ratio)
-                    .fill(self.fillColor)
-            }
-        }
+    func path(in rect: CGRect) -> Path {
+        let radius = min(rect.width, rect.height) / 2
+        let center = CGPoint(x: rect.width / 2,
+                             y: rect.height / 2)
+        var path = Path()
+        path.addArc(center: center,
+                    radius: radius,
+                    startAngle: .zero,
+                    endAngle: .init(radians: .pi * 2),
+                    clockwise: true)
+
+        path.addArc(center: center,
+                    radius: radius * ratio,
+                    startAngle: .zero,
+                    endAngle: .init(radians: .pi * 2),
+                    clockwise: false)
+
+        return path
     }
 }
 
-extension Ring {
-
-    func ring(center: CGPoint, radius: CGFloat, ratio: CGFloat) -> Path {
-        Path { path in
-            path.addArc(center: center,
-                        radius: radius,
-                        startAngle: .zero,
-                        endAngle: .init(radians: .pi * 2),
-                        clockwise: true)
-
-            path.addArc(center: center,
-                        radius: radius * ratio,
-                        startAngle: .zero,
-                        endAngle: .init(radians: .pi * 2),
-                        clockwise: false)
-
-        }
+struct Ring_Previews: PreviewProvider {
+    static var previews: some View {
+        Ring(ratio: 0.33)
     }
-
 }
-
-//struct Ring_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Ring()
-//    }
-//}

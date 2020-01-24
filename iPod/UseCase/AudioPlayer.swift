@@ -21,7 +21,6 @@ class AudioPlayer {
     
     var trackIndex = 0 {
         didSet {
-            print("old: \(oldValue), new: \(trackIndex)")
             audioPlayer = getAudioPlayer()
             audioPlayer.play()
         }

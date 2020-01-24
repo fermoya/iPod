@@ -12,7 +12,7 @@ protocol Buildable { }
 
 extension Buildable {
 
-    func mutate<T>(keyPath: WritableKeyPath<Self, T>, value: T) -> Self {
+    func mutating<T>(keyPath: WritableKeyPath<Self, T>, value: T) -> Self {
         var newSelf = self
         newSelf[keyPath: keyPath] = value
         return newSelf

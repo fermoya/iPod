@@ -37,7 +37,7 @@ struct ContentView: View {
                         self.trackSubject.send($0)
                     })
                 
-                ControlPadView()
+                ControlPad()
                     .onForwardTapped ({
                         guard self.trackIndex < (songs.count - 1) else { return }
                         self.trackIndex += 1
@@ -45,11 +45,11 @@ struct ContentView: View {
                         guard self.trackIndex > 0 else { return }
                         self.trackIndex -= 1
                     }).onSpinningChanged({ rotation in
-                        //TODO: This isn't working as expected
-                        let newPageOffset = -(rotation.laps + rotation.velocity / 10)
+                        let newPageOffset = (rotation.laps + rotation.velocity / 10)
+                        print(newPageOffset)
                         self.pageOffset = abs(newPageOffset) > abs(self.pageOffset) || rotation.hasChangedDirection ? newPageOffset : self.pageOffset
                     }).onSpinningEnded({ _ in
-                        let newPage = self.trackIndex + Int(-self.pageOffset.rounded())
+                        let newPage = self.trackIndex + Int(self.pageOffset.rounded())
                         self.trackIndex = max(0, min(newPage, songs.count - 1))
                         self.pageOffset = 0
                     }).onPlayTapped ({

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-extension Ring {
+extension View {
     func spinnable(onChanged: ((Rotation) -> Void)? = nil, onEnded: ((Rotation) -> Void)? = nil) -> some View {
         self.modifier(SpinnableViewModifier(onChanged: onChanged,
                                             onEnded: onEnded))
